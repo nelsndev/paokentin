@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,5 +33,15 @@ public class FornadaRestController {
     }
   }
   
-  
+  @CrossOrigin(origins = "*")
+  @GetMapping("/fornada/{tipo}")
+  public Fornada lerUltima(@PathVariable("tipo") String tipo) {
+    try {
+      return Facade.getInstance().lerUltima(tipo);
+    } catch (SQLException e) {
+      e.printStackTrace();
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+          "Erro ao recuperar a ultima fornada.");
+    }
+  }
 }

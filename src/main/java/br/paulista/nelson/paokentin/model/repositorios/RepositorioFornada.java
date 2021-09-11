@@ -1,11 +1,14 @@
 package br.paulista.nelson.paokentin.model.repositorios;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.paulista.nelson.paokentin.model.classes.Fornada;
+import br.paulista.nelson.paokentin.model.classes.Pao;
 
 public class RepositorioFornada implements InterfaceFornada {
   
@@ -22,18 +25,37 @@ public class RepositorioFornada implements InterfaceFornada {
   
   @Override
   public void deletar(int codigo) throws SQLException {
-    
+    // TODO
   }
   
   @Override
   public Fornada lerUltima(String tipoPao) throws SQLException {
+    String sql = "select * from fornada join pao on (fornada.tipoPao = pao.tipo) "
+        + "where id = (select max(id) from fornada where tipoPao = ?)";
+    PreparedStatement pstm = ConnectionManager.getConnection().prepareStatement(sql);
+    pstm.setString(1, tipoPao);
+    ResultSet result = pstm.executeQuery();
+    Fornada fornada = null;
     
-    return null;
+    if (result.next()) {
+      fornada = new Fornada();
+      fornada.setId(result.getInt("id"));
+      fornada.setTempoInicio(result.getTimestamp("tempoInicio").getTime());
+      fornada.setTempoFim(result.getTimestamp("tempoFim").getTime());
+      
+      Pao pao = new Pao();
+      pao.setTipo(result.getString("tipo"));
+      pao.setTempoDePreparo(result.getInt("tempoDePreparo"));
+      
+      fornada.setPao(pao);
+    }
+    
+    return fornada;
   }
   
   @Override
   public List<Fornada> lerTodos() throws SQLException {
-    
+    // TODO
     return null;
   }
 }

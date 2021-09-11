@@ -34,6 +34,10 @@ public class Facade {
   public Pao ler(String tipo) throws SQLException {
     return this.repoPao.ler(tipo);
   }
+  
+  public Fornada lerUltima(String tipo) throws SQLException {
+    return this.repoFornada.lerUltima(tipo);
+  }
 
   public List<Pao> lerTodos() throws SQLException {
     return this.repoPao.lerTodos();
