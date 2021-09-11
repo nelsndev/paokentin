@@ -8,9 +8,7 @@ import br.paulista.nelson.paokentin.model.classes.Fornada;
 public interface InterfaceFornada {
   public void salvar(Fornada fornada) throws SQLException;
 
-  public Fornada ler(int codigo) throws SQLException;
-
-  public void alterar(int codigo) throws SQLException;
+  public Fornada lerUltima(String tipoPao) throws SQLException;
 
   public void deletar(int codigo) throws SQLException;
   
