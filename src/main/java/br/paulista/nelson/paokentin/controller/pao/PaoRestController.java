@@ -44,7 +44,7 @@ public class PaoRestController {
   @GetMapping("/pao")
   public List<Pao> lerTodos() {
     try {
-      return Facade.getInstance().lerTodos();
+      return Facade.getInstance().lerTodosPao();
     } catch (SQLException e) {
       throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
           "Erro ao recuperar a lista de objetos pao.");

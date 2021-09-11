@@ -10,7 +10,9 @@ import br.paulista.nelson.paokentin.model.classes.Pao;
 
 public class RepositorioPao implements InterfacePao {
   
-  RepositorioPao() {}
+  RepositorioPao() {
+    
+  }
   
   @Override
   public void salvar(Pao pao) throws SQLException {

@@ -1,6 +1,7 @@
 package br.paulista.nelson.paokentin.controller.fornada;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,6 +43,18 @@ public class FornadaRestController {
       e.printStackTrace();
       throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
           "Erro ao recuperar a ultima fornada.");
+    }
+  }
+  
+  @CrossOrigin(origins = "*")
+  @GetMapping("/fornada")
+  public List<Fornada> lerTodos() {
+    try {
+      return Facade.getInstance().lerTodosFornada();
+    } catch (SQLException e) {
+      e.printStackTrace();
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+          "Erro ao recuperar a lista de fornadas.");
     }
   }
 }
