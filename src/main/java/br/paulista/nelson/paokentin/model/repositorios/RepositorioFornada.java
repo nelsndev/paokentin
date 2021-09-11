@@ -28,11 +28,6 @@ public class RepositorioFornada implements InterfaceFornada {
   }
   
   @Override
-  public void deletar(int codigo) throws SQLException {
-    // TODO
-  }
-  
-  @Override
   public Fornada lerUltima(String tipoPao) throws SQLException {
     String sql = "select * from fornada join pao on (fornada.tipoPao = pao.tipo) "
                 + "where id = (select max(id) from fornada where tipoPao = ?)";

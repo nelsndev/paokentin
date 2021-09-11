@@ -9,8 +9,6 @@ public interface InterfaceFornada {
   public void salvar(Fornada fornada) throws SQLException;
 
   public Fornada lerUltima(String tipoPao) throws SQLException;
-
-  public void deletar(int codigo) throws SQLException;
   
   public List<Fornada> lerTodos() throws SQLException;
 }
