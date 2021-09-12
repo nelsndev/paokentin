@@ -24,6 +24,7 @@ public class PaoRestController {
     try {
       Facade.getInstance().salvar(pao);
     } catch (SQLException e) {
+      e.printStackTrace();
       throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
           "Erro ao inserir o objeto pao.");
     }
