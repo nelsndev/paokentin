@@ -3,6 +3,7 @@ function appendAllPao(listPao) {
   for (let index = 0; index < listPao.length; index++) {
     let button = document.createElement("button");
     button.setAttribute("id", listPao[index].tipo);
+    button.setAttribute("onclick", "postFornada()");
     button.innerHTML = listPao[index].tipo;
     div.appendChild(button);
   }
