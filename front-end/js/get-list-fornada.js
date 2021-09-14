@@ -1,20 +1,15 @@
-function longToHourAndMinute(long) {
-  let date = new Date(long);
-  let hourAndMinute = date.toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit"});
-  return hourAndMinute;
-}
-
 function createDivFornada(fornada) {
+  let header = document.createElement("h2");
+  header.textContent = "Fornada";
   let span1 = document.createElement("span");
   span1.textContent = fornada.pao.tipo;
   let span2 = document.createElement("span");
-  span2.textContent = longToHourAndMinute(fornada.tempoInicio);
-  let span3 = document.createElement("span");
-  span3.textContent = longToHourAndMinute(fornada.tempoFim);
+  span2.setAttribute("class", "countdownTimer");
+  span2.setAttribute("data-tempoFim", fornada.tempoFim.toString());
   let div = document.createElement("div");
+  div.appendChild(header);
   div.appendChild(span1);
   div.appendChild(span2);
-  div.appendChild(span3);
   return div;
 }
 

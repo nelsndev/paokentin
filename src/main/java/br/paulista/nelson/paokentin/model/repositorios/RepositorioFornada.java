@@ -55,7 +55,7 @@ public class RepositorioFornada implements InterfaceFornada {
   
   @Override
   public List<Fornada> lerTodos() throws SQLException {
-    String sql = "select * from fornada as f join pao as p on (f.tipoPao = p.tipo)";
+    String sql = "select * from fornada as f join pao as p on (f.tipoPao = p.tipo) order by id";
     PreparedStatement pstm = ConnectionManager.getConnection().prepareStatement(sql);
     ResultSet result = pstm.executeQuery();
     List<Fornada> fornadas = new ArrayList<Fornada>();
