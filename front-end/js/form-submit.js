@@ -1,10 +1,10 @@
 function formToObjectJSON(form) {
   const formData = new FormData(form);
-  let objectJSON = {};
+  let object = {};
   for (let [key, value] of formData) {
-    objectJSON[key] = value;
+    object[key] = value;
   }
-  return JSON.stringify(objectJSON);
+  return JSON.stringify(object);
 }
 
 document.querySelector("form").addEventListener("submit", function (event) {

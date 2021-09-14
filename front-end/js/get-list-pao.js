@@ -3,8 +3,8 @@ function appendAllPao(listPao) {
   for (let index = 0; index < listPao.length; index++) {
     let button = document.createElement("button");
     button.setAttribute("id", listPao[index].tipo);
-    button.setAttribute("onclick", "postFornada()");
-    button.innerHTML = listPao[index].tipo;
+    button.setAttribute("onclick", "postFornada(this)");
+    button.textContent = listPao[index].tipo;
     div.appendChild(button);
   }
 }
@@ -15,7 +15,7 @@ function getListPao() {
   xhr.open("get", url, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      let listPao = JSON.parse(xhr.responseText);
+      const listPao = JSON.parse(xhr.responseText);
       appendAllPao(listPao);
     } else if (xhr.readyState === 4) {
       alert("Erro ao recuperar a lista de paes.");

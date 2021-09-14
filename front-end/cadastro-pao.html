@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro Pão</title>
-</head>
-<body>
-  <h1>Cadastro Pão</h1>
-  <div>
-    <a href="index.html">Página Inicial</a>
-  </div>
-  <form action="http://localhost:8080/pao" method="post" data-redirect="index.html">
-    <ul>
-      <li><label for="tipo">Tipo do Pão</label></li>
-      <li><input type="text" name="tipo" id="tipo"></li>
-      <li><label for="tempoDePreparo">Tempo de Preparo (minutos)</label></li>
-      <li><input type="number" name="tempoDePreparo" id="tempoDePreparo" min="0"></li>
-      <li><button type="submit" id="botaoCadastro">Cadastrar</button></li>
-    </ul>
-  </form>
-  <script src="js/form-submit.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Pão</title>
+  </head>
+  <body>
+    <h1>Cadastro Pão</h1>
+    <div>
+      <a href="index.html">Página Inicial</a>
+    </div>
+    <form action="http://localhost:8080/pao" method="post" data-redirect="index.html">
+      <ul>
+        <li><label for="tipo">Tipo do Pão</label></li>
+        <li><input type="text" name="tipo" id="tipo" /></li>
+        <li><label for="tempoDePreparo">Tempo de Preparo (minutos)</label></li>
+        <li><input type="number" name="tempoDePreparo" id="tempoDePreparo" min="0" /></li>
+        <li><button type="submit" id="botaoCadastro">Cadastrar</button></li>
+      </ul>
+    </form>
+    <script src="js/form-submit.js"></script>
+  </body>
 </html>
