@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: ;
+  background-color: #f9e0ae;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 5px;
+  color: #682c0e;
+  width: 290px;
+  margin: 80px auto 0;
+}
+
+ul {
+  padding-left: 0;
+  width: 270px;
+  margin: 50px auto 0;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 2em;
+}
+
+a {
+  font: 600 1.5em/20px 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: #c24914;
+}
+
+a:hover {
+  border-bottom: 3px solid #fc8621;
+}
+
+a:active {
+  color: #fc8621;
+}
