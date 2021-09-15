@@ -16,11 +16,20 @@ function getUltimaFornada(button) {
 function openModal(ultimaFornada) {
   let header = document.createElement("h2");
   header.textContent = "Fornada";
-  let span1 = document.createElement("span");
-  span1.textContent = ultimaFornada.pao.tipo;
-  let span2 = document.createElement("span");
-  span2.setAttribute("id", "countdownTimer");
-  span2.setAttribute("data-tempoFim", `${ultimaFornada.tempoFim}`);
+
+  let spanPaoTipo = document.createElement("span");
+  spanPaoTipo.textContent = ultimaFornada.pao.tipo;
+
+  let spanTempoInicio = document.createElement("span");
+  spanTempoInicio.textContent = `Início: ${formatDateMillisecondsToTime(ultimaFornada.tempoInicio)}`;
+
+  let spanTempoFim = document.createElement("span");
+  spanTempoFim.textContent = `Fim: ${formatDateMillisecondsToTime(ultimaFornada.tempoFim)}`;
+
+  let spanCountdownTimer = document.createElement("span");
+  spanCountdownTimer.setAttribute("id", "countdownTimer");
+  spanCountdownTimer.setAttribute("data-tempoFim", `${ultimaFornada.tempoFim}`);
+
   let closeButton = document.createElement("button");
   closeButton.setAttribute("onclick", "closeModal()");
   closeButton.textContent = "Fechar";
@@ -28,12 +37,20 @@ function openModal(ultimaFornada) {
   let modal = document.createElement("div");
   modal.setAttribute("id", "modal");
   modal.appendChild(header);
-  modal.appendChild(span1);
-  modal.appendChild(span2);
+  modal.appendChild(spanPaoTipo);
+  modal.appendChild(spanTempoInicio);
+  modal.appendChild(spanTempoFim);
+  modal.appendChild(spanCountdownTimer);
   modal.appendChild(closeButton);
   document.querySelector("body").appendChild(modal);
 
   setInterval(addCountdownTimer, 1000);
+}
+
+function formatDateMillisecondsToTime(dateMilliseconds) {
+  const date = new Date(dateMilliseconds);
+  const time = date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  return time;
 }
 
 function closeModal() {
