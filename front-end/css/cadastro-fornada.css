@@ -8,14 +8,15 @@ h1 {
   letter-spacing: 5px;
   color: #682c0e;
   width: 383px;
-  margin: 30px auto 0;
+  margin: 50px auto 0;
 }
 
 h1 + div {
+  text-align: center;
   width: 100px;
   margin: 0 auto;
   position: relative;
-  top: 380px;
+  top: 340px;
   right: 5px;
 }
 
@@ -40,7 +41,7 @@ a:active {
 
 #container {
   width: 640px;
-  margin: 40px auto 0;
+  margin: 20px auto 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
@@ -54,4 +55,12 @@ button {
   color: #c24914;
   border: 2px solid #682c0e;
   cursor: pointer;
+  box-shadow: 0 5px 0;
+}
+
+button:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+  border-bottom: 2px solid #682c0e;
 }

@@ -12,7 +12,8 @@ h1 {
 }
 
 h1 + div {
-  width: 89px;
+  text-align: center;
+  width: 121px;
   margin: 0 auto;
   position: relative;
   top: 300px;
@@ -20,9 +21,14 @@ h1 + div {
 }
 
 a {
-  font: 600 .85em/1em 'Open-sans', sans-serif;
+  font: 600 0.85em/1em "Open-sans", sans-serif;
   text-decoration: none;
   color: #c24914;
+}
+
+a + a {
+  position: relative;
+  top: 15px;
 }
 
 a:hover {
@@ -66,7 +72,7 @@ input {
 }
 
 button {
-  font: 900 1em/1px 'Open-sans', sans-serif;
+  font: 900 1em/1px "Open-sans", sans-serif;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
@@ -76,4 +82,5 @@ button {
   position: relative;
   top: 20px;
   left: 58px;
+  cursor: pointer;
 }
