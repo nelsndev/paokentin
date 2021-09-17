@@ -26,22 +26,18 @@ function createDivFornada(fornada) {
   let header = document.createElement("h2");
   header.textContent = `${fornada.pao.tipo}`;
   
-  let spanPaoTipo = document.createElement("span");
-  spanPaoTipo.textContent = fornada.pao.tipo;
-  
-  let spanCountdownTimer = document.createElement("span");
-  spanCountdownTimer.setAttribute("class", "countdownTimer");
-  spanCountdownTimer.setAttribute("data-tempoFim", `${fornada.tempoFim}`);
-  
   let spanTempoInicio = document.createElement("span");
   spanTempoInicio.textContent = `Iníco: ${formatDateMillisecondsToTime(fornada.tempoInicio)}`;
   
   let spanTempoFim = document.createElement("span");
   spanTempoFim.textContent = `Fim: ${formatDateMillisecondsToTime(fornada.tempoFim)}`;
 
+  let spanCountdownTimer = document.createElement("span");
+  spanCountdownTimer.setAttribute("class", "countdownTimer");
+  spanCountdownTimer.setAttribute("data-tempoFim", `${fornada.tempoFim}`);
+
   let div = document.createElement("div");
   div.appendChild(header);
-  div.appendChild(spanPaoTipo);
   div.appendChild(spanTempoInicio);
   div.appendChild(spanTempoFim);
   div.appendChild(spanCountdownTimer);
