@@ -24,7 +24,7 @@ function appendAllFornada(listFornada) {
 
 function createDivFornada(fornada) {
   let header = document.createElement("h2");
-  header.textContent = "Fornada";
+  header.textContent = `${fornada.pao.tipo}`;
   
   let spanPaoTipo = document.createElement("span");
   spanPaoTipo.textContent = fornada.pao.tipo;
