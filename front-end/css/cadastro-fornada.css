@@ -9,13 +9,10 @@ h1 {
   margin: 50px auto 0;
 }
 
-h1 + div {
+#container + div {
   text-align: center;
   width: 100px;
-  margin: 0 auto;
-  position: relative;
-  top: 340px;
-  right: 5px;
+  margin: 80px auto 0;
 }
 
 a {
@@ -39,7 +36,7 @@ a:active {
 
 #container {
   width: 640px;
-  margin: 20px auto 0;
+  margin: 80px auto 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
