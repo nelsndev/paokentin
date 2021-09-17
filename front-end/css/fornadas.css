@@ -1,0 +1,14 @@
+@import url("base.css");
+
+h1 {
+  font-size: 2.5em;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 5px;
+  color: #682c0e;
+  width: 193px;
+  margin: 30px auto 0;
+}
+
+#container > div {
+  border: 1px solid #888;
+}
