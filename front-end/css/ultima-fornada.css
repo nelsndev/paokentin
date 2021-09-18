@@ -8,3 +8,17 @@ h1 {
   width: 335px;
   margin: 50px auto 0;
 }
+
+a {
+  font: 600 .9em/1em 'Open-sans', sans-serif;
+  text-decoration: none;
+  color: #c24914;
+}
+
+a:hover {
+  border-bottom: 3px solid #fc8621;
+}
+
+a:active {
+  color: #fc8621;
+}
