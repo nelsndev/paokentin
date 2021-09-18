@@ -4,8 +4,7 @@ function getListFornada() {
   xhr.open("get", url, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      const listFornada = JSON.parse(xhr.responseText);
-      appendAllFornada(listFornada);
+      appendAllFornada(JSON.parse(xhr.responseText));
     } else if (xhr.readyState === 4) {
       alert("Erro ao recuperar a lista de fornadas.");
       location.href = "index.html";
