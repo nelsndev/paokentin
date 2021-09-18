@@ -35,6 +35,11 @@ button:active {
   border-bottom: 2px solid #682c0e;
 }
 
+#container + div {
+  text-align: center;
+  margin-top: 80px;
+}
+
 a {
   font: 600 .9em/1em 'Open-sans', sans-serif;
   text-decoration: none;
