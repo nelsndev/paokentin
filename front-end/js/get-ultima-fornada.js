@@ -14,27 +14,27 @@ function getUltimaFornada(button) {
 }
 
 function openModal(ultimaFornada) {
-  let header = document.createElement("h2");
+  const header = document.createElement("h2");
   header.textContent = "Fornada";
 
-  let spanPaoTipo = document.createElement("span");
+  const spanPaoTipo = document.createElement("span");
   spanPaoTipo.textContent = ultimaFornada.pao.tipo;
 
-  let spanTempoInicio = document.createElement("span");
+  const spanTempoInicio = document.createElement("span");
   spanTempoInicio.textContent = `Início: ${dateToTime(ultimaFornada.tempoInicio)}`;
 
-  let spanTempoFim = document.createElement("span");
+  const spanTempoFim = document.createElement("span");
   spanTempoFim.textContent = `Fim: ${dateToTime(ultimaFornada.tempoFim)}`;
 
-  let spanCountdownTimer = document.createElement("span");
+  const spanCountdownTimer = document.createElement("span");
   spanCountdownTimer.setAttribute("id", "countdownTimer");
   spanCountdownTimer.setAttribute("data-tempoFim", `${ultimaFornada.tempoFim}`);
 
-  let closeButton = document.createElement("button");
+  const closeButton = document.createElement("button");
   closeButton.setAttribute("onclick", "closeModal()");
   closeButton.textContent = "Fechar";
 
-  let modal = document.createElement("div");
+  const modal = document.createElement("div");
   modal.setAttribute("id", "modal");
   modal.appendChild(header);
   modal.appendChild(spanPaoTipo);
@@ -57,23 +57,23 @@ function closeModal() {
 }
 
 function addCountdownTimer() {
-  let span = document.getElementById("countdownTimer");
-  let tempoFinal = Number(span.getAttribute("data-tempoFim"));
-  let tempoAtual = new Date().getTime();
-  let tempoRestante = tempoFinal - tempoAtual;
+  const span = document.getElementById("countdownTimer");
+  const tempoFinal = Number(span.getAttribute("data-tempoFim"));
+  const tempoAtual = new Date().getTime();
+  const tempoRestante = tempoFinal - tempoAtual;
 
-  let dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
-  let horas = Math.floor(tempoRestante / (1000 * 60 * 60));
-  let minutos = Math.floor(tempoRestante / (1000 * 60));
-  let segundos = Math.floor(tempoRestante / 1000);
+  const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
+  const horas = Math.floor(tempoRestante / (1000 * 60 * 60));
+  const minutos = Math.floor(tempoRestante / (1000 * 60));
+  const segundos = Math.floor(tempoRestante / 1000);
 
-  let d = dias;
-  let h = horas - dias * 24;
-  let m = minutos - horas * 60;
-  let s = segundos - minutos * 60;
+  const d = dias;
+  const h = horas - dias * 24;
+  const m = minutos - horas * 60;
+  const s = segundos - minutos * 60;
 
-  let minString = m >= 1 ? `${m}` : `0${m}`;
-  let secString = s >= 10 ? `${s}` : `0${s}`;
+  const minString = m >= 1 ? `${m}` : `0${m}`;
+  const secString = s >= 10 ? `${s}` : `0${s}`;
   span.textContent = `${minString}:${secString}`;
 
   if (tempoRestante < 0) {
