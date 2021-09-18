@@ -9,20 +9,6 @@ h1 {
   margin: 50px auto 0;
 }
 
-a {
-  font: 600 .9em/1em 'Open-sans', sans-serif;
-  text-decoration: none;
-  color: #c24914;
-}
-
-a:hover {
-  border-bottom: 3px solid #fc8621;
-}
-
-a:active {
-  color: #fc8621;
-}
-
 #container {
   width: 640px;
   margin: 80px auto 0;
@@ -47,4 +33,18 @@ button:active {
   top: 5px;
   box-shadow: none;
   border-bottom: 2px solid #682c0e;
+}
+
+a {
+  font: 600 .9em/1em 'Open-sans', sans-serif;
+  text-decoration: none;
+  color: #c24914;
+}
+
+a:hover {
+  border-bottom: 3px solid #fc8621;
+}
+
+a:active {
+  color: #fc8621;
 }
