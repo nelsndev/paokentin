@@ -21,6 +21,7 @@ function addCountdownTimer() {
 
     if (tempoRestante < 0) {
       listSpan[index].textContent = "Pronta!";
+      listSpan[index].style.color = "#556b2f";
     }
   }
 }
