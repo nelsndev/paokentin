@@ -1,3 +1,5 @@
+const FALLBACK_PAGE = "index.html";
+
 function getListFornada() {
   const xhr = new XMLHttpRequest();
   const url = "http://localhost:8080/fornada";
@@ -7,7 +9,7 @@ function getListFornada() {
       appendAllFornada(JSON.parse(xhr.responseText));
     } else if (xhr.readyState === 4) {
       alert("Erro ao recuperar a lista de fornadas.");
-      location.href = "index.html";
+      location.href = FALLBACK_PAGE;
     }
   };
   xhr.send();
