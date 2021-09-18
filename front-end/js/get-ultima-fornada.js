@@ -47,10 +47,9 @@ function openModal(ultimaFornada) {
   setInterval(addCountdownTimer, 1000);
 }
 
-function formatDateMillisecondsToTime(dateMilliseconds) {
+function dateToTime(dateMilliseconds) {
   const date = new Date(dateMilliseconds);
-  const time = date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-  return time;
+  return date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 }
 
 function closeModal() {
