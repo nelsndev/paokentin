@@ -24,7 +24,6 @@ h1 {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  width: fit-content;
   row-gap: 12px;
 }
 
