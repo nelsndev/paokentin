@@ -37,6 +37,7 @@ function createDiv(fornada) {
   spanCountdownTimer.setAttribute("data-tempoFim", `${fornada.tempoFim}`);
 
   const div = document.createElement("div");
+  div.setAttribute("class", "fornada");
   div.appendChild(header);
   div.appendChild(spanTempoInicio);
   div.appendChild(spanTempoFim);
