@@ -4,8 +4,7 @@ function getUltimaFornada(button) {
   xhr.open("get", url, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      const ultimaFornada = JSON.parse(xhr.responseText);
-      openModal(ultimaFornada);
+      openModal(JSON.parse(xhr.responseText));
     } else if (xhr.readyState === 4) {
       alert("Erro ao recuperar a última fornada.");
     }
