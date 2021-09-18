@@ -57,7 +57,7 @@ function closeModal() {
 
 function addCountdownTimer() {
   const span = document.getElementById("countdownTimer");
-  const tempoFinal = Number(span.getAttribute("data-tempoFim"));
+  const tempoFinal = parseInt(span.getAttribute("data-tempoFim"), 10);
   const tempoAtual = new Date().getTime();
   const tempoRestante = tempoFinal - tempoAtual;
 
