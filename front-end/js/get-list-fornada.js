@@ -6,13 +6,22 @@ function getListFornada() {
   xhr.open("get", url, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      appendAllFornada(JSON.parse(xhr.responseText));
+      checkEmpty(JSON.parse(xhr.responseText));
     } else if (xhr.readyState === 4) {
       alert("Erro ao recuperar a lista de fornadas.");
       location.href = FALLBACK_PAGE;
     }
   };
   xhr.send();
+}
+
+function checkEmpty(listFornada) {
+  if (Object.entries(listFornada).length === 0) {
+    alert("Não existem fornadas cadastradas.");
+    location.href = FALLBACK_PAGE;
+  } else {
+    appendAllFornada(listFornada);
+  }
 }
 
 function appendAllFornada(listFornada) {
