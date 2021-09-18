@@ -1,1 +1,10 @@
 @import url("base.css");
+
+h1 {
+  font-size: 2.5em;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 5px;
+  color: #682c0e;
+  width: 335px;
+  margin: 50px auto 0;
+}
