@@ -18,19 +18,19 @@ function getListFornada() {
 function appendAllFornada(listFornada) {
   const div = document.getElementById("container");
   for (let index = 0; index < listFornada.length; index++) {
-    div.appendChild(createDivFornada(listFornada[index]));
+    div.appendChild(createDiv(listFornada[index]));
   }
 }
 
-function createDivFornada(fornada) {
+function createDiv(fornada) {
   const header = document.createElement("h2");
   header.textContent = `${fornada.pao.tipo}`;
   
   const spanTempoInicio = document.createElement("span");
-  spanTempoInicio.textContent = `Iníco: ${formatDateMillisecondsToTime(fornada.tempoInicio)}`;
+  spanTempoInicio.textContent = `Iníco: ${dateToTime(fornada.tempoInicio)}`;
   
   const spanTempoFim = document.createElement("span");
-  spanTempoFim.textContent = `Fim: ${formatDateMillisecondsToTime(fornada.tempoFim)}`;
+  spanTempoFim.textContent = `Fim: ${dateToTime(fornada.tempoFim)}`;
 
   const spanCountdownTimer = document.createElement("span");
   spanCountdownTimer.setAttribute("class", "countdownTimer");
@@ -45,8 +45,8 @@ function createDivFornada(fornada) {
   return div;
 }
 
-function formatDateMillisecondsToTime(dateMilliseconds) {
-  const date = new Date(dateMilliseconds);
+function dateToTime(dateInMilliseconds) {
+  const date = new Date(dateInMilliseconds);
   const time = date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   return time;
 }
