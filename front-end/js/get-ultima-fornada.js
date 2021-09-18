@@ -21,10 +21,10 @@ function openModal(ultimaFornada) {
   spanPaoTipo.textContent = ultimaFornada.pao.tipo;
 
   let spanTempoInicio = document.createElement("span");
-  spanTempoInicio.textContent = `Início: ${formatDateMillisecondsToTime(ultimaFornada.tempoInicio)}`;
+  spanTempoInicio.textContent = `Início: ${dateToTime(ultimaFornada.tempoInicio)}`;
 
   let spanTempoFim = document.createElement("span");
-  spanTempoFim.textContent = `Fim: ${formatDateMillisecondsToTime(ultimaFornada.tempoFim)}`;
+  spanTempoFim.textContent = `Fim: ${dateToTime(ultimaFornada.tempoFim)}`;
 
   let spanCountdownTimer = document.createElement("span");
   spanCountdownTimer.setAttribute("id", "countdownTimer");
