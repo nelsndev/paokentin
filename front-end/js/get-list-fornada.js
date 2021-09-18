@@ -48,8 +48,7 @@ function createDiv(fornada) {
 
 function dateToTime(dateInMilliseconds) {
   const date = new Date(dateInMilliseconds);
-  const time = date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-  return time;
+  return date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 }
 
 getListFornada();
