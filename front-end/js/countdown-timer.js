@@ -15,15 +15,17 @@ function addCountdownTimer() {
     const m = minutos - horas * 60;
     const s = segundos - minutos * 60;
 
-    const minString = (m >= 10) ? `${m}` : `0${m}`;
-    const secString = (s >= 10) ? `${s}` : `0${s}`;
-    listSpan[index].textContent = `${minString}:${secString}`;
+    listSpan[index].textContent = `${format(m)}:${format(s)}`;
 
     if (tempoRestante < 0) {
       listSpan[index].textContent = "Pronta!";
       listSpan[index].style.color = "#556b2f";
     }
   }
+}
+
+function format(time) {
+  return (time >= 10) ? `${time}` : `0${time}`;
 }
 
 setInterval(addCountdownTimer, 1000);
