@@ -10,7 +10,6 @@ h1 {
 }
 
 #container {
-  border: 1px solid #333;
   width: 751px;
   margin: 50px auto 0;
   display: grid;
@@ -49,4 +48,21 @@ h1 {
 .fornada span:last-child {
   color: #f00;
   font-size: 1.5em;
+}
+
+a {
+  font: 600 0.85em/1em "Open-sans", sans-serif;
+  text-decoration: none;
+  color: #c24914;
+  position: fixed;
+  top: 150px;
+  left: 95px;
+}
+
+a:hover {
+  border-bottom: 3px solid #fc8621;
+}
+
+a:active {
+  color: #fc8621;
 }
