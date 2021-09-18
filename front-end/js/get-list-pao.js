@@ -29,7 +29,7 @@ function validateListPao(listPao) {
 function appendAllPao(listPao) {
   let div = document.getElementById("container");
   for (let index = 0; index < listPao.length; index++) {
-    let button = document.createElement("button");
+    const button = document.createElement("button");
     button.setAttribute("id", listPao[index].tipo);
     button.setAttribute("onclick", "postFornada(this)");
     button.textContent = listPao[index].tipo;
