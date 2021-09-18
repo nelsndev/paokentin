@@ -14,27 +14,27 @@ function getListFornada() {
 }
 
 function appendAllFornada(listFornada) {
-  let div = document.getElementById("container");
+  const div = document.getElementById("container");
   for (let index = 0; index < listFornada.length; index++) {
     div.appendChild(createDivFornada(listFornada[index]));
   }
 }
 
 function createDivFornada(fornada) {
-  let header = document.createElement("h2");
+  const header = document.createElement("h2");
   header.textContent = `${fornada.pao.tipo}`;
   
-  let spanTempoInicio = document.createElement("span");
+  const spanTempoInicio = document.createElement("span");
   spanTempoInicio.textContent = `Iníco: ${formatDateMillisecondsToTime(fornada.tempoInicio)}`;
   
-  let spanTempoFim = document.createElement("span");
+  const spanTempoFim = document.createElement("span");
   spanTempoFim.textContent = `Fim: ${formatDateMillisecondsToTime(fornada.tempoFim)}`;
 
-  let spanCountdownTimer = document.createElement("span");
+  const spanCountdownTimer = document.createElement("span");
   spanCountdownTimer.setAttribute("class", "countdownTimer");
   spanCountdownTimer.setAttribute("data-tempoFim", `${fornada.tempoFim}`);
 
-  let div = document.createElement("div");
+  const div = document.createElement("div");
   div.appendChild(header);
   div.appendChild(spanTempoInicio);
   div.appendChild(spanTempoFim);
