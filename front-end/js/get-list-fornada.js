@@ -17,8 +17,7 @@ function getListFornada() {
 function appendAllFornada(listFornada) {
   let div = document.getElementById("container");
   for (let index = 0; index < listFornada.length; index++) {
-    let fornada = createDivFornada(listFornada[index]);
-    div.appendChild(fornada);
+    div.appendChild(createDivFornada(listFornada[index]));
   }
 }
 
