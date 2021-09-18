@@ -15,7 +15,7 @@ function addCountdownTimer() {
     const m = minutos - horas * 60;
     const s = segundos - minutos * 60;
 
-    const minString = (m >= 1) ? `${m}` : `0${m}`;
+    const minString = (m >= 10) ? `${m}` : `0${m}`;
     const secString = (s >= 10) ? `${s}` : `0${s}`;
     listSpan[index].textContent = `${minString}:${secString}`;
 
