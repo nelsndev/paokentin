@@ -22,3 +22,11 @@ a:hover {
 a:active {
   color: #fc8621;
 }
+
+#container {
+  width: 640px;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
