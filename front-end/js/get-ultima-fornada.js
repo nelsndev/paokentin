@@ -43,7 +43,7 @@ function openModal(ultimaFornada) {
   modal.appendChild(closeButton);
   document.querySelector("body").appendChild(modal);
 
-  setInterval(addCountdownTimer, 1000);
+  addCountdownTimer();
 }
 
 function dateToTime(dateMilliseconds) {
@@ -56,26 +56,29 @@ function closeModal() {
 }
 
 function addCountdownTimer() {
-  const span = document.getElementById("countdownTimer");
-  const tempoFinal = parseInt(span.getAttribute("data-tempoFim"), 10);
-  const tempoAtual = new Date().getTime();
-  const tempoRestante = tempoFinal - tempoAtual;
+  const countdownTimer = setInterval(function() {
+    const span = document.getElementById("countdownTimer");
+    const tempoFinal = parseInt(span.getAttribute("data-tempoFim"), 10);
+    const tempoAtual = new Date().getTime();
+    const tempoRestante = tempoFinal - tempoAtual;
 
-  const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
-  const horas = Math.floor(tempoRestante / (1000 * 60 * 60));
-  const minutos = Math.floor(tempoRestante / (1000 * 60));
-  const segundos = Math.floor(tempoRestante / 1000);
+    const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
+    const horas = Math.floor(tempoRestante / (1000 * 60 * 60));
+    const minutos = Math.floor(tempoRestante / (1000 * 60));
+    const segundos = Math.floor(tempoRestante / 1000);
 
-  const d = dias;
-  const h = horas - dias * 24;
-  const m = minutos - horas * 60;
-  const s = segundos - minutos * 60;
+    const d = dias;
+    const h = horas - dias * 24;
+    const m = minutos - horas * 60;
+    const s = segundos - minutos * 60;
 
-  span.textContent = `${format(m)}:${format(s)}`;
+    span.textContent = `${format(m)}:${format(s)}`;
 
-  if (tempoRestante < 0) {
-    span.textContent = "Pronta!";
-  }
+    if (tempoRestante < 0) {
+      span.textContent = "Pronta!";
+      clearInterval(countdownTimer);
+    }
+  }, 1000);
 }
 
 function format(time) {
