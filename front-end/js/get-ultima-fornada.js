@@ -84,6 +84,7 @@ function addCountdownTimer() {
 
     if (tempoRestante < 0) {
       span.textContent = "Pronta!";
+      span.style.color = "#556b2f";
       clearInterval(countdownTimer);
     }
   }, 1000);
