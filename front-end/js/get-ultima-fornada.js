@@ -13,37 +13,45 @@ function getUltimaFornada(button) {
 }
 
 function openModal(ultimaFornada) {
-  const header = document.createElement("h2");
-  header.textContent = "Fornada";
-
-  const spanPaoTipo = document.createElement("span");
-  spanPaoTipo.textContent = ultimaFornada.pao.tipo;
-
-  const spanTempoInicio = document.createElement("span");
-  spanTempoInicio.textContent = `Início: ${dateToTime(ultimaFornada.tempoInicio)}`;
-
-  const spanTempoFim = document.createElement("span");
-  spanTempoFim.textContent = `Fim: ${dateToTime(ultimaFornada.tempoFim)}`;
-
-  const spanCountdownTimer = document.createElement("span");
-  spanCountdownTimer.setAttribute("id", "countdownTimer");
-  spanCountdownTimer.setAttribute("data-tempoFim", `${ultimaFornada.tempoFim}`);
-
   const closeButton = document.createElement("button");
   closeButton.setAttribute("onclick", "closeModal()");
   closeButton.textContent = "Fechar";
 
   const modal = document.createElement("div");
   modal.setAttribute("id", "modal");
-  modal.appendChild(header);
-  modal.appendChild(spanPaoTipo);
-  modal.appendChild(spanTempoInicio);
-  modal.appendChild(spanTempoFim);
-  modal.appendChild(spanCountdownTimer);
+  modal.appendChild(createDiv(ultimaFornada));
   modal.appendChild(closeButton);
   document.querySelector("body").appendChild(modal);
 
   addCountdownTimer();
+}
+
+function createDiv(fornada) {
+  const header = document.createElement("h2");
+  header.textContent = "Fornada";
+
+  const spanPaoTipo = document.createElement("span");
+  spanPaoTipo.textContent = fornada.pao.tipo;
+
+  const spanTempoInicio = document.createElement("span");
+  spanTempoInicio.textContent = `Início: ${dateToTime(fornada.tempoInicio)}`;
+
+  const spanTempoFim = document.createElement("span");
+  spanTempoFim.textContent = `Fim: ${dateToTime(fornada.tempoFim)}`;
+
+  const spanCountdownTimer = document.createElement("span");
+  spanCountdownTimer.setAttribute("id", "countdownTimer");
+  spanCountdownTimer.setAttribute("data-tempoFim", `${fornada.tempoFim}`);
+
+  const div = document.createElement("div");
+  div.setAttribute("class", "fornada");
+  div.appendChild(header);
+  div.appendChild(spanPaoTipo);
+  div.appendChild(spanTempoInicio);
+  div.appendChild(spanTempoFim);
+  div.appendChild(spanCountdownTimer);
+
+  return div;
 }
 
 function dateToTime(dateMilliseconds) {
