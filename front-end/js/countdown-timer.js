@@ -18,17 +18,21 @@ function addCountdownTimer() {
     listSpan[index].textContent = `${format(m)}:${format(s)}`;
 
     if (tempoRestante < 0) {
-      listSpan[index].textContent = "Pronta!";
-      listSpan[index].style.color = "#556b2f";
-      listSpan[index].style.animation = "changesize 1.5s";
-      listSpan[index].style.animationIterationCount = "infinite";
-      listSpan[index].style.animationDirection = "alternate";
+      changeStyleTo(listSpan[index]);
     }
   }
 }
 
 function format(time) {
   return (time >= 10) ? `${time}` : `0${time}`;
+}
+
+function changeStyleTo(span) {
+  span.textContent = "Pronta!";
+  span.style.color = "#556b2f";
+  span.style.animation = "changesize .7s";
+  span.style.animationIterationCount = "infinite";
+  span.style.animationDirection = "alternate";
 }
 
 setInterval(addCountdownTimer, 1000);
