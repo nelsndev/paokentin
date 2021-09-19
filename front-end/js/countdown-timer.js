@@ -20,6 +20,9 @@ function addCountdownTimer() {
     if (tempoRestante < 0) {
       listSpan[index].textContent = "Pronta!";
       listSpan[index].style.color = "#556b2f";
+      listSpan[index].style.animation = "changesize 1.5s";
+      listSpan[index].style.animationIterationCount = "infinite";
+      listSpan[index].style.animationDirection = "alternate";
     }
   }
 }
