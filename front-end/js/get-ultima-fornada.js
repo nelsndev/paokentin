@@ -79,8 +79,8 @@ function addCountdownTimer() {
       clearInterval(countdownTimer);
     }
   }, 1000);
-}
 
-function format(time) {
-  return (time >= 10) ? `${time}` : `0${time}`;
+  function format(time) {
+    return (time >= 10) ? `${time}` : `0${time}`;
+  }
 }
