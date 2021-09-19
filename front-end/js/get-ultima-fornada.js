@@ -27,11 +27,8 @@ function openModal(ultimaFornada) {
 }
 
 function createDiv(fornada) {
-  const header = document.createElement("h2");
-  header.textContent = "Fornada";
-
-  const spanPaoTipo = document.createElement("span");
-  spanPaoTipo.textContent = fornada.pao.tipo;
+  const header = document.createElement("span");
+  header.textContent = fornada.pao.tipo;
 
   const spanTempoInicio = document.createElement("span");
   spanTempoInicio.textContent = `Início: ${dateToTime(fornada.tempoInicio)}`;
@@ -46,7 +43,6 @@ function createDiv(fornada) {
   const div = document.createElement("div");
   div.setAttribute("class", "fornada");
   div.appendChild(header);
-  div.appendChild(spanPaoTipo);
   div.appendChild(spanTempoInicio);
   div.appendChild(spanTempoFim);
   div.appendChild(spanCountdownTimer);
