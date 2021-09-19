@@ -59,11 +59,12 @@ a:active {
   border: 10px solid #682c0e;
   border-radius: 12px;
   background-color: #f9e0ae;
-  width: 650px;
+  width: 510px;
   height: 320px;
   margin: 0 auto;
-  position: relative;
-  bottom: 350px;
+  position: fixed;
+  bottom: 150px;
+  left: 425px;
 }
 
 .fornada {
