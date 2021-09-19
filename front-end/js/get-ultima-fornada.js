@@ -71,11 +71,13 @@ function addCountdownTimer() {
   const m = minutos - horas * 60;
   const s = segundos - minutos * 60;
 
-  const minString = m >= 1 ? `${m}` : `0${m}`;
-  const secString = s >= 10 ? `${s}` : `0${s}`;
-  span.textContent = `${minString}:${secString}`;
+  span.textContent = `${format(m)}:${format(s)}`;
 
   if (tempoRestante < 0) {
     span.textContent = "Pronta!";
   }
+}
+
+function format(time) {
+  return (time >= 10) ? `${time}` : `0${time}`;
 }
