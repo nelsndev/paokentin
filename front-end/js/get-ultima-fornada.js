@@ -27,7 +27,7 @@ function openModal(ultimaFornada) {
 }
 
 function createDiv(fornada) {
-  const header = document.createElement("span");
+  const header = document.createElement("h2");
   header.textContent = fornada.pao.tipo;
 
   const spanTempoInicio = document.createElement("span");
