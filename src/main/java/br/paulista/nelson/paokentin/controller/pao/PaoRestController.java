@@ -17,7 +17,7 @@ import br.paulista.nelson.paokentin.model.repositorios.Facade;
 
 @RestController
 public class PaoRestController {
-  
+
   @CrossOrigin(origins = "*")
   @PostMapping("/pao")
   public void salvar(@RequestBody Pao pao) {
@@ -29,25 +29,25 @@ public class PaoRestController {
           "Erro ao inserir o objeto pao.");
     }
   }
-  
+
   @CrossOrigin(origins = "*")
   @GetMapping("/pao/{tipo}")
   public Pao ler(@PathVariable("tipo") String tipo) {
     try {
       return Facade.getInstance().ler(tipo);
     } catch (SQLException e) {
-      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
           "Erro ao recuperar o objeto pao.");
     }
   }
-  
+
   @CrossOrigin(origins = "*")
   @GetMapping("/pao")
   public List<Pao> lerTodos() {
     try {
       return Facade.getInstance().lerTodosPao();
     } catch (SQLException e) {
-      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
           "Erro ao recuperar a lista de objetos pao.");
     }
   }

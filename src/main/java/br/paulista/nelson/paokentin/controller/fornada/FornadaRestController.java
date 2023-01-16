@@ -18,22 +18,25 @@ import br.paulista.nelson.paokentin.model.repositorios.Facade;
 
 @RestController
 public class FornadaRestController {
-  
+
   @CrossOrigin(origins = "*")
   @PostMapping("/fornada/{tipo}")
   public void salvar(@PathVariable("tipo") String tipo, @RequestBody Fornada fornada) {
     try {
       Pao pao = Facade.getInstance().ler(tipo);
       fornada.setPao(pao);
-      // Setando o tempoFim da fornada, convertendo o tempoDePreparo do pao em minutos para milisegundos:
-      fornada.setTempoFim(fornada.getTempoInicio() + (fornada.getPao().getTempoDePreparo() * 60000));
+
+      // Convertendo o tempoDePreparo do pao em minutos para milisegundos:
+      fornada
+          .setTempoFim(fornada.getTempoInicio() + (fornada.getPao().getTempoDePreparo() * 60000));
+
       Facade.getInstance().salvar(fornada);
     } catch (SQLException e) {
-      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
           "Erro ao inserir o objeto fornada.");
     }
   }
-  
+
   @CrossOrigin(origins = "*")
   @GetMapping("/fornada/{tipo}")
   public Fornada lerUltima(@PathVariable("tipo") String tipo) {
@@ -41,11 +44,11 @@ public class FornadaRestController {
       return Facade.getInstance().lerUltima(tipo);
     } catch (SQLException e) {
       e.printStackTrace();
-      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
           "Erro ao recuperar a ultima fornada.");
     }
   }
-  
+
   @CrossOrigin(origins = "*")
   @GetMapping("/fornada")
   public List<Fornada> lerTodos() {
@@ -53,7 +56,7 @@ public class FornadaRestController {
       return Facade.getInstance().lerTodosFornada();
     } catch (SQLException e) {
       e.printStackTrace();
-      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, 
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
           "Erro ao recuperar a lista de fornadas.");
     }
   }

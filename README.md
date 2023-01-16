@@ -1,13 +1,14 @@
 # Projeto paokentin
 
-Projeto paokentin realizado como prova da disciplina **Desenvolvimento WEB 2**.
+Projeto paokentin realizado como atividade da disciplina **Desenvolvimento WEB 2.**
 
 ## Tecnologias envolvidas
 
 - HTML
 - CSS
-- Javascript
-- Java (com Maven)
-- Spring Boot (Utilizando a dependência *Spring Data JDBC*)
+- JavaScript
+- Java 11.0.12
+- Spring Boot 2.5.4
+- Servidor Tomcat 9.0.52
+- MySQL 5.7.30
 - Aplicação da arquitetura REST
-- Servidor Tomcat

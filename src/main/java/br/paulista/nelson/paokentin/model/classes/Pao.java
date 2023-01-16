@@ -1,6 +1,7 @@
 package br.paulista.nelson.paokentin.model.classes;
 
 public class Pao {
+
   private String tipo;
   private int tempoDePreparo;
 

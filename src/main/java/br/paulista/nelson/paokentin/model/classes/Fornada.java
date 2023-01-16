@@ -1,11 +1,12 @@
 package br.paulista.nelson.paokentin.model.classes;
 
 public class Fornada {
+
   private int id;
   private long tempoInicio;
   private long tempoFim;
   private Pao pao;
-  
+
   public Fornada() {
     this.tempoInicio = System.currentTimeMillis();
   }

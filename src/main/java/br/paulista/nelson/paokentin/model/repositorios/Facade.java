@@ -20,13 +20,14 @@ public class Facade {
     if (myself == null) {
       myself = new Facade();
     }
+
     return myself;
   }
 
   public void salvar(Pao pao) throws SQLException {
     this.repoPao.salvar(pao);
   }
-  
+
   public void salvar(Fornada fornada) throws SQLException {
     this.repoFornada.salvar(fornada);
   }
@@ -34,7 +35,7 @@ public class Facade {
   public Pao ler(String tipo) throws SQLException {
     return this.repoPao.ler(tipo);
   }
-  
+
   public Fornada lerUltima(String tipo) throws SQLException {
     return this.repoFornada.lerUltima(tipo);
   }
@@ -42,7 +43,7 @@ public class Facade {
   public List<Pao> lerTodosPao() throws SQLException {
     return this.repoPao.lerTodos();
   }
-  
+
   public List<Fornada> lerTodosFornada() throws SQLException {
     return this.repoFornada.lerTodos();
   }

@@ -9,11 +9,12 @@ public class ConnectionManager {
   private static final String USER = "root";
   private static final String PASSWORD = "1234";
   private static Connection connection = null;
-  
+
   static Connection getConnection() throws SQLException {
     if (connection == null) {
       connection = DriverManager.getConnection(URL, USER, PASSWORD);
     }
+
     return connection;
   }
 }
