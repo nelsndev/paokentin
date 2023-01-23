@@ -1,6 +1,6 @@
-# Projeto paokentin
+# PaoKentin
 
-Projeto paokentin realizado como atividade da disciplina **Desenvolvimento WEB 2.**
+Projeto PaoKentin realizado como atividade da disciplina **Desenvolvimento WEB 2.**
 
 ## Tecnologias envolvidas
 
